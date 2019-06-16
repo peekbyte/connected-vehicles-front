@@ -1,4 +1,7 @@
+
 # Connected Vehicles
+
+[![Build Status](https://travis-ci.org/peekbyte/connected-vehicles-front.svg?branch=master)](https://travis-ci.org/peekbyte/connected-vehicles-front)
 
 for css I usess bem
 react hooks
