@@ -1,15 +1,11 @@
 import React, { useState, useEffect, useContext } from "react";
 import { format as fnsFormat, parse as fnsParse } from "date-fns";
-import { Menu, Table, WhiteSpace, Card, CardItem, CardItemRow } from "../components/base/misc";
+import {WhiteSpace, Card, CardItem, CardItemRow } from "../components/base/misc";
 import { Button, Input } from "../components/base/forms";
 import api from "../api/api";
-import { menuData } from "../utils/data";
 import vihicleImage from '../images/vihicleImage.png'
 const Home = () => {
   const name = useInputForm("");
-  const sitesInputForm = useInputForm("");
-  const includesInputForm = useInputForm("");
-  const excludesInputForm = useInputForm("");
 
   useDocumentTitle(name.value);
   return (
