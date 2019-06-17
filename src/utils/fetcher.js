@@ -1,5 +1,5 @@
 
-const getHeader = async () => {
+const getHeader =  () => {
   const header = {
     "Content-Type": "application/json"
   };

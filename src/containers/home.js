@@ -3,11 +3,12 @@ import { WhiteSpace, Card, CardItem, CardItemRow } from "../components/base/misc
 import { Button, Input, Select } from "../components/base/forms";
 import api from "../api/api";
 import vihicleImage from '../images/vihicleImage.png'
-
+import loadingGift from '../images/Gear-1s-200px.gif'
+import loadingListGift from '../images/loading.gif'
 class Home extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {searchValue: "", searchResult : [], loading : false}
+    this.state = {searchValue: "",searchStatus: "all", searchResult : [], loading : false, loadingSimulator:false, error: ""}
   }
 
   componentDidMount(){
@@ -15,13 +16,14 @@ class Home extends React.Component {
   }
 
   loadData = async() =>{
-    this.setState({loading: true})
+    this.setState({loading: true, searchResult : []})
     try{
       const result = await api.getVehicles(this.state.searchValue, this.state.searchStatus)
       this.setState({searchResult: result.data.result, loading: false})
     }
     catch(error){
       this.setState({error: String(error), loading: false})
+      alert(String(error))
     } 
   } 
 
@@ -30,14 +32,33 @@ class Home extends React.Component {
     this.setState({[name]: value}, () => this.loadData())
     
   }
+  handlerunSimulator = async(e) =>{
+    const {searchResult} = this.state
+    if(searchResult.length === 0)
+      return;
+
+    this.setState({loadingSimulator: true, searchValue: "", searchStatus: "all"})
+   
+
+    try{
+      
+      for(let i = 0; i < searchResult.length / 2; ++ i){
+        const index = Math.floor(Math.random() * searchResult.length)
+        await api.vehicleConnect(searchResult[index].vehicleId)
+      }
+      this.setState({loadingSimulator: false}, () => this.loadData())    
+    }
+    catch(error){
+      this.setState({error: String(error), loadingSimulator: false})
+      alert(String(error))
+    }
+  }
   handleClearFilter = (e) =>{
-    this.setState({searchValue: ""}, () => this.loadData())
+    this.setState({searchValue: "", searchStatus: "all"}, () => this.loadData())
     
   }
 
   render() {
-
-
     return (
       <div  >
         <div className="header">
@@ -45,8 +66,12 @@ class Home extends React.Component {
         </div>
 
         <div className="container">
+        <Button className="button--simulator" label="Run Simulator" onClick={this.handlerunSimulator}>
+         {this.state.loadingSimulator ? <img style={{width: '43px'}} src={loadingGift}></img> : 'Run Simulator'} 
+          
+          </Button>
           <Card title="Search Box">
-
+            
 
             <WhiteSpace />
             <Input
@@ -64,20 +89,20 @@ class Home extends React.Component {
               onChange={this.handleSearchValueChange}
               ></Select>
             <WhiteSpace />
-            <Button label="Clear Filter" onClick={this.handleClearFilter}>Clear Filter</Button>
+           {(this.state.searchValue || this.state.searchStatus !== 'all')   && <Button label="Clear Filter" onClick={this.handleClearFilter}>Clear Filter</Button>}  
           </Card>
+          
           <WhiteSpace />
-          {/* <Table /> */}
 
           <Card title="Result">
-            {this.state.loading && <div>... Loading</div>}
+            {this.state.loading && <img style={{margin: "27px auto"}} src={loadingListGift} alt="... Loading"></img>}
             {this.state.searchResult.map((item, index) => (          
               <CardItem key={index} >
               <img alt="Connected Vehicles" style={{width:'100px'}} src={vihicleImage} />
               <CardItemRow label="VIN" value={item.vehicleId}></CardItemRow>
               <CardItemRow label="Reg No" value={item.regNumber} ></CardItemRow>
               <CardItemRow label="Customer" value={item.name} link="/customer/3"></CardItemRow>
-              <CardItemRow label="Status" status="disconnected" value="Connected"></CardItemRow>
+              <CardItemRow label="Status" status={item.isConnected ? "connected" : "disconnected"} value={item.isConnected ? "Connected" : "Disconnected"}></CardItemRow>
             </CardItem>      
           ))}
          </Card>

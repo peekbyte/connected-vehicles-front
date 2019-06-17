@@ -10,7 +10,7 @@
     margin-bottom: 5px;
     text-transform: uppercase;
     display: block;
-    width: 60px;
+    width: 70px;
 
 }
 
@@ -79,8 +79,26 @@ input:focus {
   font-weight: 400;
   padding: 8px 16px;
   border-radius: 5px;
+  outline: none;
 }
 
+.button--simulator{
+  color: #fff;
+  background-color: #447df7;
+  border: solid 1px #447df7;
+  font-weight: 400;
+  padding: 8px 16px;
+  
+  position: fixed;
+  top: 90px;
+  right: 27px;
+  width: 137px;
+  height: 58px;
+  border-radius: 121px;
+  z-index: 3;
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.5), 0 6px 20px 0 rgba(0,0,0,0.4);
+  outline: none;
+}
 .select__list {
   width: 100%;
   border: 1px solid #e3e3e3;
@@ -89,4 +107,6 @@ input:focus {
     width: 100%;
     height: 40px;
     background-color: white;
+    padding: 4px;
+    height: 50px;
 }
