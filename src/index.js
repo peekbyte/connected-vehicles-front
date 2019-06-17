@@ -4,7 +4,7 @@ import App from './app';
 import 'normalize.css'
 import * as serviceWorker from './serviceWorker';
 
-import "./styles/style.scss";
+import "./styles/style.css";
 ReactDOM.render(<App />, document.getElementById('root'));
 
 // If you want your app to work offline and load faster, you can change
