@@ -101,7 +101,8 @@ class Home extends React.Component {
               <img alt="Connected Vehicles" style={{width:'100px'}} src={vihicleImage} />
               <CardItemRow label="VIN" value={item.vehicleId}></CardItemRow>
               <CardItemRow label="Reg No" value={item.regNumber} ></CardItemRow>
-              <CardItemRow label="Customer" value={item.name} link="/customer/3"></CardItemRow>
+              <CardItemRow label="Customer" value={item.name} ></CardItemRow>
+              <CardItemRow label="Address" value={item.address} ></CardItemRow>
               <CardItemRow label="Status" status={item.isConnected ? "connected" : "disconnected"} value={item.isConnected ? "Connected" : "Disconnected"}></CardItemRow>
             </CardItem>      
           ))}

@@ -17,15 +17,6 @@ class Home extends React.Component {
           </Card>
           <WhiteSpace />
 
-          <Card title="Vehicles">
-            <CardItem>
-              <img alt="Connected Vehicles" style={{width:'100px'}} src={vihicleImage} />
-              <CardItemRow label="VIN" value="YS2R4X9401"></CardItemRow>
-              <CardItemRow label="Reg No" value="Johans Bulk AB"></CardItemRow>
-              <CardItemRow label="Customer" value="YS2R4X9401"></CardItemRow>
-              <CardItemRow label="Status" status="disconnected" value="Connected"></CardItemRow>
-            </CardItem>
-          </Card>
         </div>
       </div>
     );
