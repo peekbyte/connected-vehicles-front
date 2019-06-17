@@ -24,20 +24,20 @@ const call = async (url, method, payload, header) => {
   }
   if (status === 400) {
     const data = await result.json();
-    throw {
+    throw new Error({
       status,
       contentType,
       statusText,
       ...data,
       errorDetail: ""
-    };
+    });
   } else {
-    throw {
+    throw new Error({
       status,
       contentType,
       statusText,
       errorDetail: statusText
-    };
+    });
   }
 };
 

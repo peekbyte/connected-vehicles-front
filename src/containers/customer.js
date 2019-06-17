@@ -2,9 +2,7 @@ import React from "react";
 import {WhiteSpace, Card, CardItem, CardItemRow } from "../components/base/misc";
 import vihicleImage from '../images/vihicleImage.png'
 class Home extends React.Component {
-  constructor(props) {
-    super(props);
-  }
+
 
   render() {
 
@@ -21,7 +19,7 @@ class Home extends React.Component {
 
           <Card title="Vehicles">
             <CardItem>
-              <img style={{width:'100px'}} src={vihicleImage} />
+              <img alt="Connected Vehicles" style={{width:'100px'}} src={vihicleImage} />
               <CardItemRow label="VIN" value="YS2R4X9401"></CardItemRow>
               <CardItemRow label="Reg No" value="Johans Bulk AB"></CardItemRow>
               <CardItemRow label="Customer" value="YS2R4X9401"></CardItemRow>
