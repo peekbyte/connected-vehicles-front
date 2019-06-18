@@ -1,6 +1,5 @@
 import React from "react";
-import {WhiteSpace, Card, CardItem, CardItemRow } from "../components/base/misc";
-import vihicleImage from '../images/vihicleImage.png'
+import {WhiteSpace, Card} from "../components/base/misc";
 class Home extends React.Component {
 
 

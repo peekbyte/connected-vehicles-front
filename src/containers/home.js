@@ -67,7 +67,7 @@ class Home extends React.Component {
 
         <div className="container">
         <Button className="button--simulator" label="Run Simulator" onClick={this.handlerunSimulator}>
-         {this.state.loadingSimulator ? <img style={{width: '43px'}} src={loadingGift}></img> : 'Run Simulator'} 
+         {this.state.loadingSimulator ? <img alt="loading" style={{width: '43px'}} src={loadingGift}></img> : 'Run Simulator'} 
           
           </Button>
           <Card title="Search Box">
