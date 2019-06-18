@@ -1,20 +1,17 @@
 language: node_js
 node_js:
-  - "node"
+  - "stable"
 cache:
   directories:
-    - "node_modules" # This will tell Travis CI to cache the dependencies
-script: yarn build # Here you could also run the build step of your application
-before_deploy: npm install now --no-save # Install Now CLI on Travis
+  - node_modules
+script:
+  - npm test
+  - npm run build
+
 deploy:
-  - provider: script # Run a custom deployment script which we will define below
-    script: now --token $NOW_TOKEN
-    skip_cleanup: true
-    on:
-      all_branches: true
-      master: false
-  - provider: script
-    script: now --token $NOW_TOKEN && now alias https://connecte-vehicles.peekbyte.now.sh --token $NOW_TOKEN
-    skip_cleanup: true
-    on:
-      master: true
+  provider: pages
+  skip_cleanup: true
+  github_token: $github_token
+  local_dir: build
+  on:
+    branch: master
