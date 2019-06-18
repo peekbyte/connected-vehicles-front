@@ -1,0 +1,19 @@
+{
+  "files": {
+    "main.css": "/connected-vehicles-front/static/css/main.4aff8b44.chunk.css",
+    "main.js": "/connected-vehicles-front/static/js/main.99b5b7c6.chunk.js",
+    "main.js.map": "/connected-vehicles-front/static/js/main.99b5b7c6.chunk.js.map",
+    "runtime~main.js": "/connected-vehicles-front/static/js/runtime~main.9fbc5d8d.js",
+    "runtime~main.js.map": "/connected-vehicles-front/static/js/runtime~main.9fbc5d8d.js.map",
+    "static/css/2.7c9e9833.chunk.css": "/connected-vehicles-front/static/css/2.7c9e9833.chunk.css",
+    "static/js/2.ccd5697e.chunk.js": "/connected-vehicles-front/static/js/2.ccd5697e.chunk.js",
+    "static/js/2.ccd5697e.chunk.js.map": "/connected-vehicles-front/static/js/2.ccd5697e.chunk.js.map",
+    "index.html": "/connected-vehicles-front/index.html",
+    "precache-manifest.c58c399bf13e4cbb9f949458b72bc484.js": "/connected-vehicles-front/precache-manifest.c58c399bf13e4cbb9f949458b72bc484.js",
+    "service-worker.js": "/connected-vehicles-front/service-worker.js",
+    "static/css/2.7c9e9833.chunk.css.map": "/connected-vehicles-front/static/css/2.7c9e9833.chunk.css.map",
+    "static/css/main.4aff8b44.chunk.css.map": "/connected-vehicles-front/static/css/main.4aff8b44.chunk.css.map",
+    "static/media/Gear-1s-200px.gif": "/connected-vehicles-front/static/media/Gear-1s-200px.dd65cf74.gif",
+    "static/media/vihicleImage.png": "/connected-vehicles-front/static/media/vihicleImage.86c33bf9.png"
+  }
+}
