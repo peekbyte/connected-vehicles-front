@@ -4,7 +4,7 @@ import { Home, NotFound, Customer } from "./containers";
 class App extends Component {
   render() {
     return (
-      <BrowserRouter basename="/" >
+      <BrowserRouter basename="/connected-vehicles-front" >
           <Switch>
             <Route path='/' exact component={Home} />
             <Route path='/home' component={Home} />
